@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:news_app/category/categories_grid.dart';
+import 'package:news_app/drawer/home_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,6 +23,9 @@ class HomeScreen extends StatelessWidget {
           title: Text(
             'News App',
           ),
+        ),
+        drawer: HomeDrawer(
+          onItemSelected: (String) {},
         ),
         body: CategoriesGrid(),
       ),
