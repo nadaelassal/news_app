@@ -50,13 +50,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
   DrawerItem selectedDrawerItem = DrawerItem.categories;
   CategoryModel? selectedCategory;
+
+  
   void onDrawerItemSelected(DrawerItem drawerItem) {
     selectedDrawerItem = drawerItem;
+    selectedCategory = null ;
     setState(() {});
     Navigator.of(context).pop();
   }
 
   void onCategorySelected(CategoryModel category) {
     selectedCategory = category;
+        setState(() {});
+
   }
 }
