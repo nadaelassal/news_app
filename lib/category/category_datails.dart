@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CategoryDatails extends StatelessWidget {
-  const CategoryDatails({super.key});
+  const CategoryDatails(this.categoryId);
+
+  final String categoryId;
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      color: Colors.red,
+    );
   }
 }
