@@ -9,8 +9,13 @@ class TabItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8,),
-      padding: const EdgeInsets.symmetric(horizontal: 12 , vertical: 6 ,),
+        margin: const EdgeInsets.symmetric(
+          vertical: 8,
+        ),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 12,
+          vertical: 6,
+        ),
         decoration: BoxDecoration(
           color: isSelected ? AppTheme.primary : AppTheme.white,
           border: Border.all(

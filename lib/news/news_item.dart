@@ -2,11 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:news_app/app_theme.dart';
+import 'package:news_app/models/news_response/news.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class NewsItem extends StatelessWidget {
-  const NewsItem({super.key});
-
+  const NewsItem(this.news, {super.key});
+  final News news;
   @override
   Widget build(BuildContext context) {
     final titleSmallStyle = Theme.of(context).textTheme.titleSmall;
@@ -18,8 +19,9 @@ class NewsItem extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(5)),
-            child: Image.asset(
-              'assets/images/NewsTest.png',
+            child: Image.network(
+              news.urlToImage ??
+                  'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg',
               height: MediaQuery.of(context).size.height * 0.25,
               width: double.infinity,
               fit: BoxFit.fill,
@@ -29,7 +31,7 @@ class NewsItem extends StatelessWidget {
             height: 4,
           ),
           Text(
-            'BBC news',
+            news.source!.name ?? '',
             style: titleSmallStyle?.copyWith(
               color: AppTheme.grey,
               fontSize: 10,
@@ -39,7 +41,7 @@ class NewsItem extends StatelessWidget {
             height: 4,
           ),
           Text(
-            "Why football's biggest clubs starting a new tournament ?",
+            news.title ?? '',
             style: titleSmallStyle?.copyWith(
               color: AppTheme.navy,
               fontWeight: FontWeight.w500,
@@ -48,7 +50,7 @@ class NewsItem extends StatelessWidget {
           Align(
             alignment: AlignmentDirectional.centerEnd,
             child: Text(
-              timeago.format(DateTime.now()),
+              timeago.format(news.publishedAt ?? DateTime.now()),
               style:
                   titleSmallStyle?.copyWith(color: AppTheme.grey, fontSize: 13),
             ),
