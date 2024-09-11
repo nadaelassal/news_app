@@ -14,40 +14,40 @@ class CategoriesGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     List<CategoryModel> categories = [
       CategoryModel(
-        id: 'Sports',
+        id: 'sports',
         name: 'Sports',
         imageName: 'ball',
         color: Color(0XFFC91C22),
       ),
       CategoryModel(
-        id: 'Sports',
-        name: 'Sports',
-        imageName: 'ball',
-        color: Color(0XFFC91C22),
+        id: 'business',
+        name: 'Business',
+        imageName: 'bussines',
+        color: Color(0XFFCF7E48),
       ),
       CategoryModel(
-        id: 'Sports',
-        name: 'Sports',
-        imageName: 'ball',
-        color: Color(0XFFC91C22),
+        id: 'politics',
+        name: 'Politics',
+        imageName: 'Politics',
+        color: Color(0XFF003E90),
       ),
       CategoryModel(
-        id: 'Sports',
-        name: 'Sports',
-        imageName: 'ball',
-        color: Color(0XFFC91C22),
+        id: 'health',
+        name: 'Health',
+        imageName: 'health',
+        color: Color(0XFFED1E79),
       ),
       CategoryModel(
-        id: 'Sports',
-        name: 'Sports',
-        imageName: 'ball',
-        color: Color(0XFFC91C22),
+        id: 'environment',
+        name: 'Environment',
+        imageName: 'environment',
+        color: Color(0XFF4882CF),
       ),
       CategoryModel(
-        id: 'Sports',
-        name: 'Sports',
-        imageName: 'ball',
-        color: Color(0XFFC91C22),
+        id: 'science',
+        name: 'Science',
+        imageName: 'science',
+        color: Color(0XFFF2D352),
       ),
     ];
     return Padding(
@@ -72,13 +72,13 @@ class CategoriesGrid extends StatelessWidget {
                 mainAxisSpacing: 24,
                 crossAxisSpacing: 24,
               ),
-              itemBuilder: (_, inex) {
-                final category = categories[inex];
+              itemBuilder: (_, index) {
+                final category = categories[index];
                 return GestureDetector(
                   onTap: () => onCategorySelected(category),
                   child: CategoryItem(
                     category: category,
-                    index: inex,
+                    index: index,
                   ),
                 );
               },

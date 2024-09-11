@@ -4,7 +4,7 @@ import 'package:news_app/news/news_list.dart';
 import 'package:news_app/tabs/tab_item.dart';
 
 class SourcesTabs extends StatefulWidget {
-  const SourcesTabs(this.sources);
+  const SourcesTabs(this.sources, {super.key});
 
   final List<Source> sources;
 
