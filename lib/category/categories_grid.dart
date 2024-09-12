@@ -6,45 +6,54 @@ import 'package:news_app/category/category_item.dart';
 import 'package:news_app/category/category_model.dart';
 
 class CategoriesGrid extends StatelessWidget {
-  const CategoriesGrid({super.key});
+  const CategoriesGrid({super.key, required this.onCategorySelected});
+
+  final void Function(CategoryModel) onCategorySelected;
 
   @override
   Widget build(BuildContext context) {
     List<CategoryModel> categories = [
       CategoryModel(
+        id: 'sports',
         name: 'Sports',
         imageName: 'ball',
         color: Color(0XFFC91C22),
       ),
       CategoryModel(
-        name: 'Sports',
-        imageName: 'ball',
-        color: Color(0XFFC91C22),
+        id: 'business',
+        name: 'Business',
+        imageName: 'bussines',
+        color: Color(0XFFCF7E48),
       ),
       CategoryModel(
-        name: 'Sports',
-        imageName: 'ball',
-        color: Color(0XFFC91C22),
+        id: 'politics',
+        name: 'Politics',
+        imageName: 'Politics',
+        color: Color(0XFF003E90),
       ),
       CategoryModel(
-        name: 'Sports',
-        imageName: 'ball',
-        color: Color(0XFFC91C22),
+        id: 'health',
+        name: 'Health',
+        imageName: 'health',
+        color: Color(0XFFED1E79),
       ),
       CategoryModel(
-        name: 'Sports',
-        imageName: 'ball',
-        color: Color(0XFFC91C22),
+        id: 'environment',
+        name: 'Environment',
+        imageName: 'environment',
+        color: Color(0XFF4882CF),
       ),
       CategoryModel(
-        name: 'Sports',
-        imageName: 'ball',
-        color: Color(0XFFC91C22),
+        id: 'science',
+        name: 'Science',
+        imageName: 'science',
+        color: Color(0XFFF2D352),
       ),
     ];
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 24),
@@ -63,10 +72,16 @@ class CategoriesGrid extends StatelessWidget {
                 mainAxisSpacing: 24,
                 crossAxisSpacing: 24,
               ),
-              itemBuilder: (_, inex) => CategoryItem(
-                category: categories[inex],
-                index: inex,
-              ),
+              itemBuilder: (_, index) {
+                final category = categories[index];
+                return GestureDetector(
+                  onTap: () => onCategorySelected(category),
+                  child: CategoryItem(
+                    category: category,
+                    index: index,
+                  ),
+                );
+              },
               itemCount: categories.length,
             ),
           )
