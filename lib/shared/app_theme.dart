@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static const Color primary = Color(0XFF39A552);
   static const Color navy = Color(0XFF4F5A69);
+  static const Color grey = Color(0XFF79828B);
+
   static const Color black = Color(0XFF303030);
   static const Color white = Color(0XFFFFFFFF);
 
@@ -26,7 +28,9 @@ class AppTheme {
     scaffoldBackgroundColor: Colors.transparent,
     textTheme: TextTheme(
       titleLarge:
-          TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: white),
+          TextStyle(fontSize: 22, fontWeight: FontWeight.w400, color: white),
+      titleSmall:
+          TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: black),
     ),
   );
 }
