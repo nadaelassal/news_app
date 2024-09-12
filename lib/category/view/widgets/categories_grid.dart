@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:news_app/app_theme.dart';
-import 'package:news_app/category/category_item.dart';
-import 'package:news_app/category/category_model.dart';
+import 'package:news_app/shared/app_theme.dart';
+import 'package:news_app/category/view/widgets/category_item.dart';
+import 'package:news_app/category/data/models/category_model.dart';
 
 class CategoriesGrid extends StatelessWidget {
   const CategoriesGrid({super.key, required this.onCategorySelected});
@@ -26,7 +26,7 @@ class CategoriesGrid extends StatelessWidget {
         color: Color(0XFFCF7E48),
       ),
       CategoryModel(
-        id: 'politics',
+        id: 'general',
         name: 'Politics',
         imageName: 'Politics',
         color: Color(0XFF003E90),
@@ -38,7 +38,7 @@ class CategoriesGrid extends StatelessWidget {
         color: Color(0XFFED1E79),
       ),
       CategoryModel(
-        id: 'environment',
+        id: 'technology',
         name: 'Environment',
         imageName: 'environment',
         color: Color(0XFF4882CF),

@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:news_app/app_theme.dart';
+import 'package:news_app/shared/app_theme.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({super.key, required this.onItemSelected});

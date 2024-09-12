@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:news_app/app_theme.dart';
-import 'package:news_app/models/news_response/news.dart';
+import 'package:news_app/shared/app_theme.dart';
+import 'package:news_app/news/data/models/news.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class NewsItem extends StatelessWidget {

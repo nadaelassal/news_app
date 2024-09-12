@@ -2,10 +2,10 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app/category/categories_grid.dart';
-import 'package:news_app/category/category_datails.dart';
-import 'package:news_app/category/category_model.dart';
-import 'package:news_app/drawer/home_drawer.dart';
+import 'package:news_app/category/view/widgets/categories_grid.dart';
+import 'package:news_app/category/view/widgets/category_datails.dart';
+import 'package:news_app/category/data/models/category_model.dart';
+import 'package:news_app/home/view/widgets/home_drawer.dart';
 import 'package:news_app/settings/settings_tab.dart';
 
 class HomeScreen extends StatefulWidget {
