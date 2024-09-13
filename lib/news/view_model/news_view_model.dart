@@ -7,6 +7,11 @@ class NewsViewModel with ChangeNotifier {
   final dataSource = NewsDataSource();
   String? errorMessage;
   bool isLoading = false;
+    int page = 1;
+
+  int pageSize = 20;
+
+
 
   Future<void> getNews(String sourceId) async {
     isLoading = true;
@@ -16,7 +21,7 @@ class NewsViewModel with ChangeNotifier {
       if (response.status == 'ok' && response.news != null) {
         newsList = response.news!;
       } else {
-        errorMessage = 'Failed to get news';
+        errorMessage = 'Failed to get news ' ;
       }
     } catch (error) {
       errorMessage = error.toString();

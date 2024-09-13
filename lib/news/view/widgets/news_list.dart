@@ -14,10 +14,13 @@ class NewsList extends StatefulWidget {
 }
 
 class _NewsListState extends State<NewsList> {
+
+
   final viewModel = NewsViewModel();
   @override
   Widget build(BuildContext context) {
-    viewModel.getNews(widget.sourceId);
+    viewModel.getNews(widget.sourceId );
+    
 
     return ChangeNotifierProvider(
       create: (_) => viewModel,
