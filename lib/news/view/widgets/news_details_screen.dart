@@ -15,6 +15,7 @@ class NewsDetailsScreen extends StatelessWidget {
     final titleSmallStyle = Theme.of(context).textTheme.titleSmall;
     var news = ModalRoute.of(context)!.settings.arguments as News;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('News App'),
       ),
@@ -88,7 +89,10 @@ class NewsDetailsScreen extends StatelessWidget {
                         titleSmallStyle?.copyWith(fontWeight: FontWeight.w800),
                   ),
                 ),
-                Icon(Icons.arrow_forward_ios ,size: 20,),
+                Icon(
+                  Icons.arrow_forward_ios,
+                  size: 20,
+                ),
               ],
             )
           ],
@@ -96,10 +100,11 @@ class NewsDetailsScreen extends StatelessWidget {
       ),
     );
   }
+
   Future<void> _launchUrl(newsUrl) async {
     final Uri _url = Uri.parse(newsUrl);
-  if (!await launchUrl(_url)) {
-    throw Exception('Could not launch $_url');
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
   }
-}
 }
